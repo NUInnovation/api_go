@@ -26,6 +26,8 @@ ___3. How it works:___
 
 ___4. Key technologies:___
 
+http://designmodo.github.io/Flat-UI/docs/components.html
+
 ___5. Next steps:___
 
 ####Project setup information
