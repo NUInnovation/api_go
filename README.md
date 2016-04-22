@@ -1,10 +1,6 @@
 # API_GO
 2016 Spring EECS 395/495 Journalism
 
-I did the homepage!
-
-I made the API.
-
 ####General Information
 
 ___1. Team members:___
