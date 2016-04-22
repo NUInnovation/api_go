@@ -3,6 +3,8 @@
 
 I did the homepage!
 
+I made the API.
+
 ####General Information
 
 ___1. Team members:___
