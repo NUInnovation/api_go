@@ -9,7 +9,7 @@ I made the API.
 
 ___1. Team members:___
 
-Yushun Wang, Qingwei Chen, Zichen Wang, Yi Gu, Tae Hun Kim
+Yushun Wang, Qingwei Chen, Zichen Wang, Yi Gu, Tae Hun Kim, Shikhar Mohan
 
 ___2. What it does:___
 
