@@ -1,3 +1,0 @@
-Router.route('/', {
-    template: 'home'
-});

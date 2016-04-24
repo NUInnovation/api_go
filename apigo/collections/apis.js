@@ -1,0 +1,1 @@
+Apis = new Mongo.Collection('apis');

@@ -1,0 +1,10 @@
+<template name="addApi">
+    <form>Add an api:
+        <input type="text" placeholder="Api name here..." name="apiName">
+    </form>
+    <ul>
+        {{#each api}}
+            <li><a href="/api/{{_id}}">{{name}}</a></li>
+        {{/each}}
+    </ul>
+</template>
