@@ -1,15 +1,11 @@
 # API_GO
 2016 Spring EECS 395/495 Journalism
 
-I did the homepage!
-
-I made the API.
-
 ####General Information
 
 ___1. Team members:___
 
-Yushun Wang, Qingwei Chen, Zichen Wang, Yi Gu, Tae Hun Kim
+Yushun Wang, Qingwei Chen, Zichen Wang, Yi Gu, Tae Hun Kim, Shikhar Mohan
 
 ___2. What it does:___
 
