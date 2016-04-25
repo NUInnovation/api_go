@@ -1,12 +1,111 @@
-#search-section {
-	float: right;
-	margin-top: 4%;
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700");
+
+/*base*/
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: 1em;
+	text-transform: uppercase;
 }
 
+h1 {
+	font-size: 2.5em;
+	font-family: "Raleway", Helvetica, sans-serif;
+}
+
+h2 {
+	font-size: 1.5em;
+	line-height: 1.5em;
+	font-family: "Courier New", monospace;
+}
+
+p {
+	font-size: 1em;
+  	line-height: 32px;
+  	font-family: sans-serif;
+
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-decoration: none;
+}
+
+hr {
+	margin: 0;
+	border: 0;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	color: #c5c5c5;
+	width: 100%;		
+}
+
+
+li {
+	display: inline-block;
+	text-decoration: none;
+	width: 4em;
+}
+
+/*components*/
 .navbar-form .form-control {
-	width: 400px;
+	width: 270px;
 }
 
-#newid {
-	
+.video {
+	text-align: center;
 }
+
+.actions li {
+
+}
+
+
+/*module*/
+header {
+	margin: 0, 2em, 0, 2em;
+}
+
+header h1 {
+	text-align: center;
+}
+
+header .container {
+	width: 70%;
+}
+
+#search-div{
+	margin-top: 1.5em;
+	float: right;
+}
+
+.main {
+	background-color: #EFEEEE;
+}
+
+.api-sec {
+	background-color: white;
+	width: 70%;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.content {
+	text-align: center;
+}
+
+.content .one {
+	float: left;
+}
+
+.content .two {
+	float: right;
+}
+
+
+
+
+/*state*/
+
+
