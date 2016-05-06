@@ -1,0 +1,55 @@
+.showApi .container {
+	background-color: white;
+	padding-top: 15px;
+	border-color: #EFEEEE;
+	border: 15px;
+}
+
+.showApi h2, h3, h4{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-transform: none;
+}
+
+.showApi h2 {
+	font-size: 40px;
+}
+
+.showApi h3 {
+	font-size: 25px;
+}
+
+.showApi h4 {
+	font-size: 20px;
+}
+
+.showApi .nav-pills li {
+	display: inline;
+}
+
+.showApi .left-pill {
+}
+
+.showApi .tutorial-header{
+	display: flex;
+}
+
+.showApi .rating {
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+.showApi .btn-group-container {
+
+}
+
+.showApi .tutorial-step {
+	padding-left: 30px;
+}
+
+.showApi .tutorial-contents {
+	padding-left: 30px;
+}

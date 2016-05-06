@@ -2,6 +2,10 @@ Router.route('/', function(){
   this.render('homepage');
 });
 
+Router.route('/api/alchemy', function(){
+  this.render('showApi');
+});
+
 Router.route('/add', function(){
   this.render('addApi');
 });
