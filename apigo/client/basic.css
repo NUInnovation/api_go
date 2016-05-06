@@ -47,65 +47,6 @@ li {
 	width: 4em;
 }
 
-/*components*/
-.navbar-form .form-control {
-	width: 270px;
-}
 
-.video {
-	text-align: center;
-}
-
-.actions li {
-
-}
-
-
-/*module*/
-header {
-	margin: 0, 2em, 0, 2em;
-}
-
-header h1 {
-	text-align: center;
-}
-
-header .container {
-	width: 70%;
-}
-
-#search-div{
-	margin-top: 1.5em;
-	float: right;
-}
-
-.main {
-	background-color: #EFEEEE;
-}
-
-.api-sec {
-	background-color: white;
-	width: 70%;
-	margin: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-
-.content {
-	text-align: center;
-}
-
-.content .one {
-	float: left;
-}
-
-.content .two {
-	float: right;
-}
-
-
-
-
-/*state*/
 
 

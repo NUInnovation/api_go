@@ -1,0 +1,7 @@
+Template.singleApi.onRendered(function() {
+	$('.owl-carousel').owlCarousel({
+		loop:true,
+		margin:10,
+		items:1,
+	})
+});
