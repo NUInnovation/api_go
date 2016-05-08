@@ -35,13 +35,13 @@ h4 {
 
 p {
 	font-size: 0.8em;
-  	line-height: 1em;
   	font-family: sans-serif;
 
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	text-decoration: none;
+	color: #33485f;
 }
 
 hr {
