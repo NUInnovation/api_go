@@ -18,13 +18,14 @@ h2 {
 	font-size: 1.5em;
 	line-height: 1.5em;
 	font-family: "Courier New", sans-serif;
+	text-transform: capitalize;
 }
 
 h3 {
 	font-size: 1.5em;
 	line-height: 1em;
 	font-family: "Raleway", Helvetica, sans-serif;
-
+	text-transform: capitalize;
 }
 
 h4 {
