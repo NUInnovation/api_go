@@ -1,0 +1,257 @@
+<template name="showApi">
+<!-- Header 
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" id="icon-div">
+                    <h1>API GO</h1>
+                </div>
+                <div class="col-md-6" id="search-div">
+                    <form role="search" class="navbar-form navbar-left">
+                        <div class="form-group" >
+                            <input type="text" placeholder="Search" class="form-control" >
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>                
+    </header>
+													-->
+													
+<!-- Main Content -->
+	<main class="showApi main">
+		<div class="container">
+			<div class="tutorial-header">
+				<h2>AlchemyVision</h2>
+				<span class="rating">
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star-empty"></span>
+				</span>
+			</div>
+			<hr>
+			<section>
+				<h3>Introduction</h3>
+				<p>
+				The IBM AlchemyVision service provides an Application Programming Interface (API) that uses deep learning innovations to understand a picture's content and context. The methods in the AlchemyVision API can analyze an image and return information about the objects, people, and text found within that image. The AlchemyVision API can enhance the way businesses make decisions by integrating image cognition into their applications.</p>
+				<p>
+				The AlchemyVision API uses the term tagging to mean identifying keywords that are associated with an image or a face within an image, not to indicate that those keywords are being added as metadata to an image.
+				</p>
+				<!-- <p>{{introtext}}</p> -->
+			</section>
+			<hr>
+			<div class="row">
+				<!-- Language select buttons -->
+				<div class="btn-group-container row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<div class="btn-group btn-group-sm btn-group-justified">
+							<a href='#' class="btn btn-primary lang-btn-group" id="nodeJS">Node.js</a>
+							<a href='#' class="btn btn-default lang-btn-group" id="java">Java</a>
+						</div>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<!-- Tutorial Menu -->
+				<div class="col-md-2 left-pill">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="#prerequisites">Pre-requisites</a></li>
+						<li><a href="#tagging-images">Tutorials</a></li>
+						<li><a href="#external-links">External Links</a></li>
+						<li><a href="#sample-works">Sample Works</a></li>
+						<li><a href="#comments">Comments</a></li>
+					</ul>
+				</div>
+				<!-- Contents -->
+				<div class="col-md-10">
+					<!-- Tutorials -->
+					<div class="tutorial-chapter">
+						<h3 id="prerequisites">Pre-requisites</h3>
+						<div class="tutorial-contents">
+							<p>Create a Bluemix account in order to get API keys and secrets in order to use the AlchemyVision API. By registering, <b>you get 1,000 free API calls per day</b> and you can track them using the Bluemix account dashboard. The allotted free API calls are great for testing an application and for infrequent use, but if you want to build something for production, you need to pay for it.</p>
+							<iframe width="420" height="315" src="https://www.youtube.com/embed/B_m3mBadUrQ" frameborder="0" allowfullscreen></iframe>
+							<div class="nodeJS">
+								<h4>Step 1: Instal npm</h4>
+								<iframe width="420" height="315" src="https://www.youtube.com/embed/wREima9e6vk" frameborder="0" allowfullscreen></iframe>
+								<h4>Step 2</h4>
+								<p>
+									After verifying that npm has been installed, run: <br>
+									<code>npm install watson-developer-cloud</code>
+								</p>
+							</div>
+							<div class="java">
+								<img src="/images/alchemy-java-prereq.png" alt="java pre-requisites" width="600px">
+							</div>
+						</div>
+					</div>
+					<div class="tutorial-chapter">
+						<div class="tutorial-subchapter">
+							<h3 id="tagging-images">How to get image links from HTML document</h3>
+							<div class="tutorial-step">
+								<h4>Overview</h4>
+								<div class="tutorial-contents">
+									<p>These are the request parameters necessary for the AlchemyVision API to return the list of image links.</p>
+									<img src="/images/alchemy-request.png" alt="request">
+									<p>These are the keys that the JSON returned by the API contains. <b>Important: pay attention to the “status” before parsing any information from the response. Only take data from the response if “status” = “OK”.</b></p>
+									<img src="/images/alchemy-response.png" alt="response">
+									<p>The steps below will show you how to make a request in order to get image links from an HTML documented that is sent over a POST request to AlchemyVision.</p>
+								</div>
+								<h4>Step 1</h4>
+								<div class="tutorial-contents">
+									<p>
+									Write the basic required statements.
+									<pre><code>var watson = require('watson-developer-cloud');
+var fs = require('fs');</code></pre>
+									</p>
+								</div>
+								<h4>Step 2</h4>
+								<div class="tutorial-contents">
+									<p>
+									Create the Alchemy Vision object which will be used to pass in parameters for the API request. Note: You need to provide your API key (which can be found in your Bluemix account) in order to initialize this object.
+									<pre><code>var alchemy_vision = watson.alchemy_vision({
+	api_key: '{apikey}'
+});</code></pre>
+									</p>
+								</div>
+								<h4>Step 3</h4>
+								<div class="tutorial-contents">
+									<p>
+									Now, we are going to create the params object - one of the request parameters stated above is the HTML document. In order to download the HTML of a file, we will use the function fs.readFileSync(path), which takes a path to a HTML file, and turns it’s content into an HTML string.
+									<pre><code>var params = {
+	html: fs.readFileSync("example.html")
+};</code></pre>
+									</p>
+								</div>
+								<h4>Step 4</h4>
+								<div class="tutorial-contents">
+									<p>
+									Pass in the params to the <code>getImageLinks()</code> function of the <code>alchemy_vision</code> object. We will also pass in a callback function that will contain instructions on what to do after the API fetches data. We initially check for an error if there was one, otherwise we will output the keywords object as JSON to the console. 
+									<pre><code>alchemy_vision.getImageLinks(params, function (err, keywords) {
+	if (err)
+		console.log('errlr:', err);
+	else
+		console.log(JSON.stringify(keywords, null, 2));
+});</code></pre>
+									</p>
+								</div>
+								<h4>Step 5</h4>
+								<div class="tutorial-contents">
+									<p>
+									This is what the response looks like after a successful API call. You can store this within a JavaScript object and use data located in the “url” and “image” keys within your application.
+									<pre><code>{
+	"status": "OK",
+	"usage": "...",
+	"url": "http://www.example.com",
+	"image": "http://example.com/vehicle.jpg"
+}</code></pre>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="tutorial-subchapter">
+							<h3 id="identifying-faces">How to Tag faces from image URL</h3>
+							<div class="tutorial-step">
+								<p>This tutorial will go over how to tag faces within a given image that is located at some public URL.</p>
+								<h4>Overview</h4>
+								<div class="tutorial-contents">
+									<p>Here’s the list of request and response parameters.</p>
+									<img src="/images/alchemy-face-request.png" alt="request">
+									<img src="/images/alchemy-face-response.png" alt="response">
+								</div>
+								<h4>Step 1</h4>
+								<div class="tutorial-contents">
+									<p>
+									Write the basic required statements.
+									<pre><code>var watson = require('watson-developer-cloud');
+var fs = require('fs');</code></pre>
+									</p>
+								</div>
+								<h4>Step 2</h4>
+								<div class="tutorial-contents">
+									<p>
+									Create the Alchemy Vision object which will be used to pass in parameters for the API request. Note: You need to provide your API key (which can be found in your Bluemix account) in order to initialize this object.
+									<pre><code>var alchemy_vision = watson.alchemy_vision({
+	api_key: '{apikey}'
+});</code></pre>
+									</p>
+								</div>
+								<h4>Step 3</h4>
+								<div class="tutorial-contents">
+									<p>
+									Now, we are going to create the params object - one of the request parameters stated above is the URL of the image or a website, which will pick the primary image on the page to analyze. Here we will give it the direct path to an image (vehicle.jpg).
+									<pre><code>var params = {
+	url: 'http://www.example.com/vehicle.jpg'
+};</code></pre>
+									</p>
+								</div>
+								<h4>Step 4</h4>
+								<div class="tutorial-contents">
+									<p>
+									Pass in the params to the <code>recognizeFaces()</code> function of the <code>alchemy_vision</code> object. We will also pass in a callback function that will contain instructions on what to do after the API fetches data. We initially check for an error if there was one, otherwise we will output the keywords object as JSON to the console. 
+									<pre><code>alchemy_vision.recognizeFaces(params, function (err, keywords) {
+	if (err)
+		console.log('errlr:', err);
+	else
+		console.log(JSON.stringify(keywords, null, 2));
+});</code></pre>
+									</p>
+								</div>
+								<h4>Step 5</h4>
+								<div class="tutorial-contents">
+									<p>
+									This is what the sample response looks like after a successful API call.
+									<pre><code>{
+	"status": "OK",
+	"usage": "...",
+	"url": "http://example.com/unnamed.jpg",
+	"totalTransactions": "4",
+	"imageFaces": [
+	{
+	  "age": {
+	  "ageRange": "55-64",
+	  "score": "0.441192"
+	  },
+	  "gender": {
+		"gender": "MALE",
+		"score": "0.956893"
+	  },
+	  "height": "69",
+	  "positionX": "187",
+	  "positionY": "72",
+	  "width": "69"
+	}
+	]
+}</code></pre>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tutorial-chapter">
+						<h3 id="external-links">External Links</h3>
+						<div class="tutorial-contents">
+							<p>
+							Official website: <a href="http://www.alchemyapi.com/products/alchemyvision">Alchemy API</a>
+							</p>
+						</div>
+					</div>
+					<div class="tutorial-chapter">
+						<h3 id="sample-works">Sample Works</h3>
+						<div class="tutorial-contents">
+							<p>
+								<a href="https://github.com/l2fprod/java-vision">Java Vision</a>: Sample Java web application using the Alchemy Vision API for image tagging and face detection.<br>
+								<a href="https://github.com/eugenechung81/dextro-poc">Dextro POC</a>: Computer vision AI using Alchemy API for classifying videos.
+							</p>
+						</div>
+					</div>
+					<div class="tutorial-chapter">
+						<h3 id="comments">Comments</h3>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</main>
+</template>
