@@ -3,30 +3,53 @@
 
 	{{> header}}
 
-	<section class="intro">
+	<section class="intro" id="about-id">
 		<div class="container">
+			<div class="title">
+				<h2>WELCOME, Developers</h2>
+				<p>Things you can find and do here ...</p>
+			</div>
 			<div class="row">
-				<div class="col-md-6">
-					<h2>Intro</h2>
-					<p>ksdjhf</p>
+				<div class="col-md-4">
+					<img src="11.png" alt="" height="200px" width="150px">
+					<h4>Convenient collection</h4>
+					<p>Find all the APIs you need in one place</p>
 				</div>
-				<div class="col-md-6">
-					<video class="left-video" controls="controls">
-						<source src="#" type="video/mp4">
-						Your browser does not support HTML5 video.</video>
+				<div class="col-md-4">
+					<img src="22.png" alt="" height="200px" width="150px">
+					<h4>Sample works and Tutorials</h4>
+					<p>See how popular projects implemented</p>
+					
+				</div>
+				<div class="col-md-4">
+					<img src="33.png" alt="" height="200px" width="150px">
+					<h4>Easily contribute </h4>
+					<p>Our APIs tutorial are always up-to-date</p>
+					
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<main class="homepage-main">
+	<main class="homepage-main" id="api-id">
 		<div class="container">	
-			{{> singleApi}}
 
-			{{> singleApi}}
+			<div class="api-sec">
+				{{> singleApi}}
 
-			{{> singleApi}}
+				{{> singleApi}}
+
+				{{> singleApi}}
+			</div>
+			
+			<section class="add-sec" id="add-id">
+				
+				<button class="add-btn"><span>Add a new API</span></button>
+				
+			</section>
 		</div>
+
+		
 	</main>
 
 	<footer class="homepage-footer">
