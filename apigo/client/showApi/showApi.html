@@ -1,24 +1,6 @@
 <template name="showApi">
-<!-- Header 
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3" id="icon-div">
-                    <h1>API GO</h1>
-                </div>
-                <div class="col-md-6" id="search-div">
-                    <form role="search" class="navbar-form navbar-left">
-                        <div class="form-group" >
-                            <input type="text" placeholder="Search" class="form-control" >
-                        </div>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>                
-    </header>
-													-->
-													
+<div id="LANG_LIST" style="display:none">nodeJS java</div>
+<!-- Header Empty-->
 <!-- Main Content -->
 	<main class="showApi main">
 		<div class="container">
@@ -45,28 +27,30 @@
 			<hr>
 			<div class="row">
 				<!-- Language select buttons -->
-				<div class="btn-group-container row">
+				<nav class="btn-group-container row">
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
-						<div class="btn-group btn-group-sm btn-group-justified">
-							<a href='#' class="btn btn-primary lang-btn-group" id="nodeJS">Node.js</a>
-							<a href='#' class="btn btn-default lang-btn-group" id="java">Java</a>
+						<div class="btn-group btn-group-sm btn-group-justified lang-btn-group">
+							<a href='#' class="btn btn-primary " id="nodeJS">Node.js</a>
+							<a href='#' class="btn btn-default" id="java">Java</a>
 						</div>
 					</div>
 					<div class="col-md-4"></div>
-				</div>
+				</nav>
 				<!-- Tutorial Menu -->
-				<div class="col-md-2 left-pill">
+				<aside class="col-md-2 left-pill">
 					<ul class="nav nav-pills nav-stacked">
 						<li><a href="#prerequisites">Pre-requisites</a></li>
-						<li><a href="#tagging-images">Tutorials</a></li>
+						<li><a href="#getting-image-links">Tutorials</a></li>
+						<li><a href="#getting-image-links" class="each_tutorial">Get Image Links</a></li>
+						<li><a href="#identifying-faces" class="each_tutorial">Identify Faces</a></li>
 						<li><a href="#external-links">External Links</a></li>
 						<li><a href="#sample-works">Sample Works</a></li>
 						<li><a href="#comments">Comments</a></li>
 					</ul>
-				</div>
+				</aside>
 				<!-- Contents -->
-				<div class="col-md-10">
+				<section class="col-md-10">
 					<!-- Tutorials -->
 					<div class="tutorial-chapter">
 						<h3 id="prerequisites">Pre-requisites</h3>
@@ -74,7 +58,7 @@
 							<p>Create a Bluemix account in order to get API keys and secrets in order to use the AlchemyVision API. By registering, <b>you get 1,000 free API calls per day</b> and you can track them using the Bluemix account dashboard. The allotted free API calls are great for testing an application and for infrequent use, but if you want to build something for production, you need to pay for it.</p>
 							<iframe width="420" height="315" src="https://www.youtube.com/embed/B_m3mBadUrQ" frameborder="0" allowfullscreen></iframe>
 							<div class="nodeJS">
-								<h4>Step 1: Instal npm</h4>
+								<h4>Step 1: Install npm</h4>
 								<iframe width="420" height="315" src="https://www.youtube.com/embed/wREima9e6vk" frameborder="0" allowfullscreen></iframe>
 								<h4>Step 2</h4>
 								<p>
@@ -89,7 +73,7 @@
 					</div>
 					<div class="tutorial-chapter">
 						<div class="tutorial-subchapter">
-							<h3 id="tagging-images">How to get image links from HTML document</h3>
+							<h3 id="getting-image-links">How to get image links from HTML document</h3>
 							<div class="tutorial-step">
 								<h4>Overview</h4>
 								<div class="tutorial-contents">
@@ -250,7 +234,7 @@ var fs = require('fs');</code></pre>
 					<div class="tutorial-chapter">
 						<h3 id="comments">Comments</h3>
 					</div>					
-				</div>
+				</section>
 			</div>
 		</div>
 	</main>
