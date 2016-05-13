@@ -31,6 +31,11 @@
 .showApi .left-pill {
 }
 
+.showApi .each_tutorial {
+	padding-left: 25px;
+	font-size: 15px;
+}
+
 .showApi .tutorial-header{
 	display: flex;
 }
@@ -57,5 +62,5 @@
 }
 
 .java{
-	#display: none;
+	display: none;
 }
