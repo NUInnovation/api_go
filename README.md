@@ -34,6 +34,8 @@ ___5. Next steps:___
 
 ___1. Resource dependencies (databases, external services, APIs, etc.)___
 
+https://github.com/jackadams/meteor-editable-text-wysiwyg-bootstrap-3/
+
 ___2. Code/library dependencies___
 
 ___3. How to setup and run the code___
