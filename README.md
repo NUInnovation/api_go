@@ -36,6 +36,12 @@ ___1. Resource dependencies (databases, external services, APIs, etc.)___
 
 https://github.com/jackadams/meteor-editable-text-wysiwyg-bootstrap-3/
 
+SimpleSchema
+https://github.com/aldeed/meteor-simple-schema
+
+AutoForm
+https://github.com/aldeed/meteor-autoform
+
 ___2. Code/library dependencies___
 
 ___3. How to setup and run the code___
