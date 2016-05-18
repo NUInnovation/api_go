@@ -17,3 +17,8 @@ Router.route('/api/:_id', function () {
     }
   });
 });
+
+
+Router.route('/newApi', function(){
+  this.render('newApi');
+});
