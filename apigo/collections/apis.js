@@ -7,6 +7,9 @@ Schema.StepSchema = new SimpleSchema({
 	num: {
 		type: String
 	},
+	title: {
+		type: String
+	},
 	text: {
 		type: String
 	},
