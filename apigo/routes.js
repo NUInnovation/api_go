@@ -9,6 +9,10 @@ Router.route('/api/alchemy', function(){
 Router.route('/add', function(){
   this.render('addApi');
 });
+  
+Router.route('/about', function(){
+  this.render('about');
+});
 
 Router.route('/api/:_id', function () {
   this.render('showApi', {
@@ -16,6 +20,7 @@ Router.route('/api/:_id', function () {
       return Apis.findOne({_id: this.params._id});
     }
   });
+
 });
 
 
