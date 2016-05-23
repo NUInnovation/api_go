@@ -10,7 +10,7 @@ Router.route('/add', function(){
   this.render('addApi');
 });
   
-Router.route('/about', function(){
+Router.route('/api-intro', function(){
   this.render('about');
 });
 
