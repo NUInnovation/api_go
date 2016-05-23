@@ -1,0 +1,28 @@
+<template name='menus'>
+	{{#each menus}}
+	<div class="tutorial-chapter">
+		<h3>{{title}}</h3>
+		<div class="tutorial-contents">
+		{{#if !isTutorial }}
+			{{#each languages}}
+				{{#each steps}}
+					{{> step}}
+				{{/each}}
+			{{/each}}
+		{{else}}
+			{{#each menus}}
+				<div class="tutorial-subchapter">
+					<h3>{{title}}</h3>
+					<div class="tutorial-contents">
+						{{#each languages}}
+							{{#each steps}}
+								{{> step}}
+							{{/each}}
+						{{/each}}
+					</div>
+				</div>
+			{{/each}}
+		{{/if}}
+		</div>
+	</div>
+</template>

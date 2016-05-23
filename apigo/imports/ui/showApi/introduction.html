@@ -1,0 +1,10 @@
+<template name='introduction'>
+	<h3>Introduction</h3>
+	{{#each paragraphs}}
+		{{> paragraph}}
+	{{/each}}
+</template>
+
+<template name='paragraph'>
+	<p>{{text}}</p>
+</template>

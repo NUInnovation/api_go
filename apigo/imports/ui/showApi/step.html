@@ -1,0 +1,10 @@
+<template name='step'>
+	<h4>{{title}}</h4>
+	{{#if isVideo}}
+		{{> iframe}}
+	{{/if}}
+	{{#if isImg}}
+		{{> img}}
+	{{/if}}
+	<p>{{body}}</p>
+</template>

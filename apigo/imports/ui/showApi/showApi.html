@@ -1,0 +1,47 @@
+<template name="showApi">
+	<div id="LANG_LIST" style="display:none">nodeJS java</div>
+<!-- Header Empty-->
+<!-- Main Content -->
+	<main class="showApi main">
+		<div class="container">
+			<div class="tutorial-header">
+				{{> tutorialHeader}}
+			</div>
+			<hr>
+			<section>
+				{{> introduction}}
+			</section>
+			<hr>
+			<div class="row">
+				<!-- Language select buttons -->
+				<nav class="btn-group-container row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<div class="btn-group btn-group-sm btn-group-justified lang-btn-group">
+							<a href='#' class="btn btn-primary " id="nodeJS">Node.js</a>
+							<a href='#' class="btn btn-default" id="java">Java</a>
+						</div>
+					</div>
+					<div class="col-md-4"></div>
+				</nav>
+				<!-- Tutorial Menu -->
+				<aside class="col-md-2 left-pill">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="#prerequisites">Pre-requisites</a></li>
+						<li><a href="#getting-image-links">Tutorials</a></li>
+						<li><a href="#getting-image-links" class="each_tutorial">Get Image Links</a></li>
+						<li><a href="#identifying-faces" class="each_tutorial">Identify Faces</a></li>
+						<li><a href="#external-links">External Links</a></li>
+						<li><a href="#sample-works">Sample Works</a></li>
+						<li><a href="#comments">Comments</a></li>
+					</ul>
+				</aside>
+				<!-- Contents -->
+				<section class="col-md-10">
+					<!-- Tutorials -->
+					{{> menus}}					
+				</section>
+			</div>
+		</div>
+	</main>
+</template>
