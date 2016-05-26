@@ -10,10 +10,10 @@ Router.route('/add', function(){
   this.render('addApi');
 });
 
-Router.route('/api/:_id', function () {
+Router.route('/api/:name', function () {
   this.render('showApi', {
     data: function () {
-      return Apis.findOne({_id: this.params._id});
+      return Apis.findOne({nameOfApi: this.params.name});
     }
   });
 });

@@ -57,7 +57,7 @@ hr {
 
 li {
 	display: inline-block;
-	text-decoration: none;
+	#text-decoration: none;
 	width: 4em;
 }
 
