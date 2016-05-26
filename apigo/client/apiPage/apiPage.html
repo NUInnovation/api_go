@@ -1,72 +1,72 @@
 <template name="apiPage">
-  <main class="showApi main">
-  <div id="LANG_LIST" style="display:none">
-    {{#each languages}}{{nameOfLanguage}}{{/each}}
-  </div>
-    <div class="container">
-      <div class="tutorial-header">
-        <h2>{{name}}</h2>
-        <span class="rating">
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star-empty"></span>
-        </span>
-      </div>
-      <hr>
-      <section>
-        <h3>Introduction</h3>
-        <p>
-        {{intro}}
-        </p>
-        <!-- <p>{{introtext}}</p> -->
-      </section>
-      <hr>
+	<main class="showApi main">
+  <div id="LANG_LIST" style="display:none">{{#each lang in languages}}{{lang.nameOfLanguage}} {{/each}}</div>
+		<div class="container">
+			<div class="tutorial-header">
+				<h2>{{name}}</h2>
+					<span class="rating">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</span>
+			</div>
+			<hr>
+			<section>
+				<h3>Introduction</h3>
+				<p>{{intro}}</p>
+			</section>
+			<hr>
+			
+			<div class="row">
+				<!-- Language select buttons -->
+				<nav class="btn-group-container row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<div class="btn-group btn-group-sm btn-group-justified lang-btn-group">
+            {{#each languages}}
+              <a href="#{{nameOfLanguage}}" class='btn {{#if first ../languages this}} btn-primary {{else}} btn-default {{/if}}' id='{{nameOfLanguage}}'>{{nameOfLanguage}}</a>
+            {{/each}}
+						</div>
+					</div>
+					<div class="col-md-4"></div>
+				</nav>
 
-      <div class="row">
-        <!-- Language select buttons -->
-        <nav class="btn-group-container row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <div class="btn-group btn-group-sm btn-group-justified lang-btn-group">
-              {{#each languages}}
-                <a href="#{{nameOfLanguage}}" class='btn {{#if first ../languages this}} btn-primary {{else}} btn-default {{/if}}' id='{{nameOfLanguage}}'>{{nameOfLanguage}}</a>
-              {{/each}}
-            </div>
-          </div>
-          <div class="col-md-4"></div>
-        </nav>
+				<!-- Tutorial Menu -->
+				<aside class="col-md-2 left-pill">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="#prerequisites">Pre-requisites</a></li>
+						<li><a href="#getting-image-links">Tutorials</a></li>
+						<li><a href="#getting-image-links" class="each_tutorial">Get Image Links</a></li>
+						<li><a href="#identifying-faces" class="each_tutorial">Identify Faces</a></li>
+						<li><a href="#external-links">External Links</a></li>
+						<li><a href="#sample-works">Sample Works</a></li>
+						<li><a href="#comments">Comments</a></li>
+					</ul>
+				</aside>
+				
+				<!-- Contents -->
+				<section class="col-md-10">
+					<div class="tutorial-chapter">
+						<h3 id="prerequisites">Pre-requisites</h3>
+						<div class="tutorial-contents">
+							{{#each lang in languages}}
+							<div class="{{lang.nameOfLanguage}}">
+								<p>{{lang.prereq.overview}}</p>
+								{{#let steps=lang.prereq.stepsOfPrereq}}
+								{{#each step in steps}}
+								<h4>Step {{step.num}}</h4>
+								<p></p>
+								{{/each}}{{/let}}
+							</div>
+							{{/each}}
+						</div>
+					</div>
+				</section>
 
-        <!-- Tutorial Menu -->
-        <aside class="col-md-2 left-pill">
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="#prerequisites">Pre-requisites</a></li>
-            <li><a href="#getting-image-links">Tutorials</a></li>
-            <li><a href="#getting-image-links" class="each_tutorial">Get Image Links</a></li>
-            <li><a href="#identifying-faces" class="each_tutorial">Identify Faces</a></li>
-            <li><a href="#external-links">External Links</a></li>
-            <li><a href="#sample-works">Sample Works</a></li>
-            <li><a href="#comments">Comments</a></li>
-          </ul>
-        </aside>
-
-        <section class="col-md-10">
-          <div class="tutorial-chapter">
-            <h3 id="prerequisites">Pre-requisites</h3>
-            <div class="tutorial-contents">
-              <p>Create a Bluemix account in order to get API keys and secrets in order to use the AlchemyVision API. By registering, <b>you get 1,000 free API calls per day</b> and you can track them using the Bluemix account dashboard. The allotted free API calls are great for testing an application and for infrequent use, but if you want to build something for production, you need to pay for it.</p>
-              <iframe width="420" height="315" src="https://www.youtube.com/embed/B_m3mBadUrQ" frameborder="0" allowfullscreen></iframe>
-              <div class="{{#with languages.[1]}}{{nameOfLanguage}}{{/with}}">
-
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-
-    </div>
-  </main>
-
+			</div>
+		</div>
+	</main>
+	{{afterLoad}}
 </template>
