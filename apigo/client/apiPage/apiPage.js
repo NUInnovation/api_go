@@ -24,10 +24,10 @@ Template.apiPage.onRendered(function() {
 
 Template.apiPage.afterLoad = function(){
 	Meteor.defer(function(){
-		 var LANG_LIST = $("#LANG_LIST").text().split(" ");
-  for (var i = 1; i< LANG_LIST.length; i++) {
-	  var lang = LANG_LIST[i];
-	  $("." + lang).hide();
-  }
+		var LANG_LIST = $("#LANG_LIST").text().split(" ");
+		for (var i = 1; i< LANG_LIST.length; i++) {
+			var lang = LANG_LIST[i];
+			$("." + lang).hide();
+		}
 	});
 }
