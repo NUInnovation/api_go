@@ -20,3 +20,14 @@ import { ReactiveVar } from 'meteor/reactive-var';
 //   },
 // });
 
+Template.registerHelper('last',
+    function(list, elem) {
+        return _.last(list) === elem;
+    }
+);
+
+Template.registerHelper('first',
+    function(list, elem) {
+        return _.first(list) === elem;
+    }
+);

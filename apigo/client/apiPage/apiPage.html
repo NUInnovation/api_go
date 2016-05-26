@@ -1,6 +1,6 @@
 <template name="apiPage">
-	<div id="LANG_LIST" style="display:none">{{#each lang in languages}}{{lang.nameOfLanguage}} {{/each}}</div>
 	<main class="showApi main">
+  <div id="LANG_LIST" style="display:none">{{#each lang in languages}}{{lang.nameOfLanguage}} {{/each}}</div>
 		<div class="container">
 			<div class="tutorial-header">
 				<h2>{{name}}</h2>
@@ -25,9 +25,9 @@
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
 						<div class="btn-group btn-group-sm btn-group-justified lang-btn-group">
-							{{#each languages}}
-							<a href="#" class='btn btn-primary' id='{{nameOfLanguage}}'>{{nameOfLanguage}}</a>
-							{{/each}}
+            {{#each languages}}
+              <a href="#{{nameOfLanguage}}" class='btn {{#if first ../languages this}} btn-primary {{else}} btn-default {{/if}}' id='{{nameOfLanguage}}'>{{nameOfLanguage}}</a>
+            {{/each}}
 						</div>
 					</div>
 					<div class="col-md-4"></div>
@@ -64,9 +64,9 @@
 						</div>
 					</div>
 				</section>
+
 			</div>
 		</div>
 	</main>
 	{{afterLoad}}
-
 </template>

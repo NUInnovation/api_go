@@ -2,6 +2,7 @@ Apis = new Mongo.Collection('apis');
 
 Schema = {};
 
+
 Schema.StepSchema = new SimpleSchema({
 	num: {
 		type: String,
