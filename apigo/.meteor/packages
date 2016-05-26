@@ -29,3 +29,5 @@ aldeed:collection2
 aldeed:autoform
 session
 aldeed:simple-schema
+perak:codemirror
+underscore

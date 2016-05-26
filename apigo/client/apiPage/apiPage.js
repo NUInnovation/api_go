@@ -13,10 +13,10 @@ Template.apiPage.helpers({
   }
 });
 
-Template.apiPage.onRendered(function() {
-  var LANG_LIST = $("#LANG_LIST").text().split(" ");
-  
-    $(".lang-btn-group a").click(function(){
+
+Template.apiPage.events({
+  'click .lang-btn-group a': function(event){
+    var LANG_LIST = $("#LANG_LIST").text().split(" ");
     $(this).attr("class", "btn btn-primary");
     $(this).siblings().attr("class", "btn btn-default");
     var lang_clicked = $(this).attr('id');
@@ -28,6 +28,12 @@ Template.apiPage.onRendered(function() {
         $("." + lang).hide();
       }
     }
-    });
+  }
+});
+
+Template.apiPage.onRendered({
   
-}); 
+
+});
+
+
