@@ -39,29 +39,36 @@
 	
 	</section>
 
-	<section>
-		<div class="intro2">
-		<h4>Before</h4>
-		<h4>after</h4>
-		</div>
-	</section>
-
-	<main class="homepage-main" id="api-id">
+	<main class="homepage-main">
 		<div class="container">	
 
-			<div class="api-sec">
+			<section class="api-sec">
 				{{> singleApi}}
 
-				{{> singleApi}}
+				<hr>
 
 				{{> singleApi}}
-			</div>
-			
-			<section class="add-sec" id="add-id">
 				
-				<a href="/newApi"><button class="add-btn"><span>Add a new API</span></button></a>
+				<hr>
+
+				{{> singleApi}}
+
+				<hr>
+
+			</section>
+			
+			<section class="add-sec">
+				
+				<div class="add-btn">
+					<a href="/newApi"><span>ADD A NEW API</span></a>
+				</div>
+
+				<div>
+					<h4 class="quotes"><i>"It's never a bug – it’s just an undocumented feature. – <span>Anonymous</span>"</i></h4>
+				</div>
 				
 			</section>
+
 		</div>
 
 		
