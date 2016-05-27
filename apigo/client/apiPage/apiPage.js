@@ -10,6 +10,12 @@ Template.apiPage.helpers({
   },
   sampleworks: function(){
     return this.sampleworks;
+  },
+  editorOptions: function() {
+	return {
+		lineNumbers: true,
+		mode: "javascript"
+	};
   }
 });
 
@@ -31,16 +37,14 @@ Template.apiPage.events({
   }
 });
 
-
-
-Template.apiPage.onRendered(function() {
-  var LANG_LIST = $("#LANG_LIST").text().split(" ");
-  for (var i = 1; i< LANG_LIST.length; i++) {
-	  var lang = LANG_LIST[i];
-	  $("." + lang).hide();
-  }
+// Template.apiPage.onRendered(function() {
+  // var LANG_LIST = $("#LANG_LIST").text().split(" ");
+  // for (var i = 1; i< LANG_LIST.length; i++) {
+	  // var lang = LANG_LIST[i];
+	  // $("." + lang).hide();
+  // }
   
-}); 
+// }); 
 
 Template.apiPage.afterLoad = function(){
 	Meteor.defer(function(){
@@ -51,3 +55,5 @@ Template.apiPage.afterLoad = function(){
 		}
 	});
 }
+
+

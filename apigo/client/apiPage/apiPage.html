@@ -2,6 +2,7 @@
 	<main class="showApi main">
   <div id="LANG_LIST" style="display:none">{{#each lang in languages}}{{lang.nameOfLanguage}} {{/each}}</div>
 		<div class="container">
+			<!-- Tutorial Header: API Name, ratings -->
 			<div class="tutorial-header">
 				<h2>{{name}}</h2>
 					<span class="rating">
@@ -13,12 +14,17 @@
 					</span>
 			</div>
 			<hr>
+			<!-- Introduction -->
 			<section>
 				<h3>Introduction</h3>
 				<p>{{intro}}</p>
 			</section>
 			<hr>
-			
+			<!--
+			Following div has language choice buttons on the top,
+			tutorial menu on the left,
+			and the main contents on the right.
+			-->
 			<div class="row">
 				<!-- Language select buttons -->
 				<nav class="btn-group-container row">
@@ -32,39 +38,108 @@
 					</div>
 					<div class="col-md-4"></div>
 				</nav>
-
 				<!-- Tutorial Menu -->
 				<aside class="col-md-2 left-pill">
 					<ul class="nav nav-pills nav-stacked">
 						<li><a href="#prerequisites">Pre-requisites</a></li>
 						<li><a href="#getting-image-links">Tutorials</a></li>
-						<li><a href="#getting-image-links" class="each_tutorial">Get Image Links</a></li>
-						<li><a href="#identifying-faces" class="each_tutorial">Identify Faces</a></li>
+							{{#each tut in languages.[0].tutorials}}
+							<li><a href="#{{tut.nameOfTutorial}}" class="each_tutorial">{{tut.nameOfTutorial}}</a></li>
+							{{/each}}
 						<li><a href="#external-links">External Links</a></li>
 						<li><a href="#sample-works">Sample Works</a></li>
 						<li><a href="#comments">Comments</a></li>
 					</ul>
-				</aside>
-				
+				</aside>	
 				<!-- Contents -->
 				<section class="col-md-10">
+					<!-- Pre-Requisites -->
 					<div class="tutorial-chapter">
 						<h3 id="prerequisites">Pre-requisites</h3>
 						<div class="tutorial-contents">
 							{{#each lang in languages}}
-							<div class="{{lang.nameOfLanguage}}">
-								<p>{{lang.prereq.overview}}</p>
-								{{#let steps=lang.prereq.stepsOfPrereq}}
-								{{#each step in steps}}
-								<h4>Step {{step.num}}: {{step.title}}</h4>
-								<p>{{step.text}}</p>
-								{{/each}}{{/let}}
-							</div>
+								<div class="{{lang.nameOfLanguage}}">
+									<p>{{lang.prereq.overview}}</p>
+									{{#let steps=lang.prereq.stepsOfPrereq}}
+									{{#each step in steps}}
+										<h4>Step {{step.num}}: {{step.title}}</h4>
+										<p>{{step.text}}</p>
+										<!-- image -->
+										{{#if step.image}}<img src="{{step.image}}" alt="{{step.title}} img">{{/if}}
+										<!-- video -->
+										{{#if step.video}}<iframe width="420" height="315" src="{{step.video}}" frameborder="0" allowfullscreen></iframe>{{/if}}
+										<!-- code -->
+										{{#if step.code}}{{> CodeMirror id=step.num options=editorOptions code=step.code}}{{/if}}
+									{{/each}}
+									{{/let}}
+								</div>
 							{{/each}}
+						</div>	
+					</div>
+					<!-- Tutorials -->
+					<div class="tutorial-chapter">
+					{{#each lang in languages}}
+					<div class="{{lang.nameOfLanguage}}">
+						{{#each tut in lang.tutorials}}
+						<div class="tutorial-subchapter">
+							<h3 id="{{tut.nameOfTutorial}}">{{tut.nameOfTutorial}}</h3>
+							<div class="tutorial-step">
+								{{#each step in tut.stepsOfTutorial}}
+								<div class="tutorial-contents">
+									<h4>Step {{step.num}}: {{step.title}}</h4>
+									<p>{{step.text}}</p>
+									<!-- image -->
+									{{#if step.image}}<img src="{{step.image}}" alt="{{step.title}} img">{{/if}}
+									<!-- video -->
+									{{#if step.video}}<iframe width="420" height="315" src="{{step.video}}" frameborder="0" allowfullscreen></iframe>{{/if}}
+									<!-- code -->
+									{{#if step.code}}{{> CodeMirror id=step.num options=editorOptions code=step.code}}{{/if}}
+								</div>
+								{{/each}}
+							</div>
+						</div>
+						{{/each}}
+					</div>
+					{{/each}}
+					</div>
+					<!-- Sample Works -->
+					<div class="tutorial-chapter">
+						<h3 id="sample-works">Sample Works</h3>
+						<div class="tutorial-contents">
+							<p>
+							{{#each sample in sampleworks}}
+							<a href="{{sample.linkOfSampleWork}}">{{sample.textOfSampleWork}}</a>
+							{{/each}}
+							</p>
 						</div>
 					</div>
-				</section>
+					<!-- Comments -->
+					<div class="tutorial-chapter">
+						<h3 id="comments">Comments</h3>
+						<div id="disqus_thread"></div>
+						<script>
+						/**
+						* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+						* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+						*/
+						
+						var disqus_config = function () {
+						this.page.url = window.location.href; // Replace PAGE_URL with your page's canonical URL variable
+						this.page.identifier = window.location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+						};
+						
+						(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
 
+						s.src = '//apigo.disqus.com/embed.js';
+
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+						})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					</div>
+				</section>
 			</div>
 		</div>
 	</main>
