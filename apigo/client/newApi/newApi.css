@@ -1,5 +1,9 @@
+.form-group {
+	width: 100%;
+}
+
 .panel {
-  width: 950px;
+  width: 100%;
   position: relative;
 }
 
@@ -7,6 +11,17 @@
   width: 50%;
 }
 
-.input-75{
-  width: 75%;
+.list-group-item {
+	width: 100%;
 }
+
+.add-sampleworks-btn, .add-languages-btn{
+	width: 100%;
+	display: block;
+	text-align: center;
+	border: 1px solid #f4f2f2;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin: auto;
+}
+

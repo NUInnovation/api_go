@@ -1,8 +1,36 @@
 <template name="newApi">
 	<div class="container">
-    <h1>Contribute</h1>
-    <h6 style="text-transform:none;">You can use the API page builder below to add a new API to API_GO.</h6>
+	    <h1>Contribute</h1>
+	    <h6 style="text-transform:none;">You can use the API page builder below to add a new API to API_GO.</h6>
 
-		{{> quickForm collection="Apis" id="insertForm" type="insert" class="new-form"}}
+		<!-- {{> quickForm collection="Apis" id="insertForm" type="insert" class="new-form"}} -->
+
+		{{#autoForm collection="Apis" id="insertApiForm" type="insert"}}
+			 <fieldset>
+      			{{> afQuickField name='nameOfApi'}}
+      			{{> afQuickField name='intro'}}
+
+				<div class="languages-group">
+					<a href="#" class="add-languages-btn">Add Tutorials</a>
+					{{#if addLanguagesFields}}
+						{{> afQuickField name='languages'}}
+					{{/if}}
+				</div>
+
+				<div class="sampleworks-group">
+					<a href="#" class="add-sampleworks-btn">Add Examples</a>
+					{{#if addSampleworksFields}}
+						{{> afQuickField name='sampleworks'}}
+					{{/if}}
+				</div>
+      			
+      			<button type="submit" class="btn btn-primary">Submit</button>
+    		</fieldset>
+		{{/autoForm}}
 	</div>
 </template>
+
+
+
+
+
