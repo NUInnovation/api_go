@@ -14,13 +14,12 @@ Router.route('/api-intro', function(){
   this.render('about');
 });
 
-Router.route('/api/:_id', function () {
-  this.render('showApi', {
+Router.route('/api/:name', function () {
+  this.render('apiPage', {
     data: function () {
-      return Apis.findOne({_id: this.params._id});
+      return Apis.findOne({nameOfApi: this.params.name});
     }
   });
-
 });
 
 
