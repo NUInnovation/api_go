@@ -1,4 +1,4 @@
-Apis = new Mongo.Collection('Apis');
+Apis = new Mongo.Collection('apis');
 
 Schema = {};
 
@@ -9,7 +9,7 @@ Schema.StepSchema = new SimpleSchema({
 		label: "Step Number"
 	},
 	title: {
-		type: String
+		type: String,
 	},
 	text: {
 		type: String,
@@ -23,20 +23,27 @@ Schema.StepSchema = new SimpleSchema({
 	},
 	image: {
 		type: String,
-		label: "Image link"
+		label: "Image link",
+		optional: true,
+		autoform: {
+		  afFieldInput: {
+		    type: "url"
+		  }
+		}
 	},
 	video: {
 		type: String,
-		label: "Embed video code",
+		label: "Video link",
+		optional: true,
 		autoform: {
 		  afFieldInput: {
-		    type: "textarea",
-		    rows: 3
+		    type: "url"
 		  }
 		}
 	},
 	code: {
 		type: String,
+		optional: true,
 		autoform: {
 		  afFieldInput: {
 		    type: "textarea",
@@ -61,7 +68,8 @@ Schema.PrereqSchema = new SimpleSchema({
 	},
 	stepsOfPrereq: {
 		type: [Schema.StepSchema],
-		label: "Step"
+		label: "Step",
+		optional: true,
 	},
 	
 });
@@ -73,7 +81,8 @@ Schema.TutorialSchema = new SimpleSchema({
 	},
 	stepsOfTutorial: {
 		type: [Schema.StepSchema],
-		label: "Tutorial Steps"
+		label: "Tutorial Steps",
+		optional: true,
 	},
 	
 });
@@ -82,15 +91,16 @@ Schema.TutorialSchema = new SimpleSchema({
 Schema.LanguageSchema = new SimpleSchema({
 	nameOfLanguage: {
 		type: String,
-		label: "Language Name (i.e. Python, JavaScript, etc.)"
+		label: "Language Name (i.e. Python, JavaScript, etc.)",
 	},
 	prereq: {
 		type: Schema.PrereqSchema,
-		label: "Prerequisites"
+		label: "Prerequisites",
 	},
 	tutorials: {
 		type: [Schema.TutorialSchema],
-		label: "Tutorials"
+		label: "Tutorials",
+		optional: true,
 	},
 });
 
@@ -122,17 +132,19 @@ Schema.ApisSchema = new SimpleSchema({
 		  afFieldInput: {
 		    type: "textarea",
 		    rows: 6,
-		    class: "half-input"
+		    class: "half-input",
 		  }
 		}
 
 	},
 	languages: {
-		type: [Schema.LanguageSchema]
+		type: [Schema.LanguageSchema],
+		optional: true,
 	},
 	sampleworks: {
 		type: [Schema.SampleWorkSchema],
-		label: "Examples"
+		label: "Examples",
+		optional: true,
 	},
 });
 
