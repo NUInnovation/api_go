@@ -7,9 +7,10 @@
 .about-title {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 25px;
-	line-height: 65px;
-	color: #F7C242;
+	line-height: 35px;
+	background-color: #F7C242;
 	font-weight: 300;
+	display: inline-block;
 }
 
 .about-content {
@@ -44,21 +45,6 @@
 	text-decoration: inherit; 
 	text-align: justify;
 	color: #333333;
-
-	float: right;
-	margin-top: 10px;
-	margin-right: -50px;
-
-	padding-top: 12px;
-	padding-bottom: 12px;
-	padding-left: 12px;
-
-	white-space: normal; 
-	border-style: solid none; 
-	border-color: #333333;
-	border-top-width: 1px; 
-	border-bottom-width: 1px; 
-	display: block; 
 }
 
 #faq {
