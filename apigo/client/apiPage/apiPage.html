@@ -1,4 +1,8 @@
 <template name="apiPage">
+
+
+{{> header}}
+
 	<main class="showApi main">
   <div id="LANG_LIST" style="display:none">{{#each lang in languages}}{{lang.nameOfLanguage}} {{/each}}</div>
 		<div class="container">
@@ -210,4 +214,6 @@
 		</div>
 	</main>
 	{{afterLoad}}
+
+	{{> footer}}
 </template>
