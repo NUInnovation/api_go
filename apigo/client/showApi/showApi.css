@@ -28,6 +28,11 @@
 	display: inline;
 }
 
+.showApi .nav-pills li .row{
+	text-align: center;
+}
+
+
 .showApi .left-pill {
 }
 
@@ -50,9 +55,9 @@
 .showApi .btn-group-container {
 }
 
-.showApi .tutorial-step {
+/*.showApi .tutorial-step {
 	padding-left: 30px;
-}
+}*/
 
 .showApi .tutorial-contents {
 	padding-left: 30px;

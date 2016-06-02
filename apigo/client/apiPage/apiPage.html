@@ -5,18 +5,19 @@
 			<!-- Tutorial Header: API Name, ratings -->
 			<div class="tutorial-header">
 				<h2>{{name}}</h2>
-					<span class="rating">
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star-empty"></span>
-					</span>
 			</div>
 			<hr>
 			<!-- Introduction -->
 			<section>
-				<h3>Introduction</h3>
+				<h3>Introduction <i class="fa fa-pencil fa-pencil-intro"></i></h3>
+				<div class="editable-form intro-autoform">
+					{{#autoForm collection="Apis" id="updateForm" type="update" doc=exampleDoc autosave=true}}
+					    <fieldset>
+					      {{> afQuickField name='intro'}}
+					    </fieldset>
+					    <button type="submit" class="btn btn-primary btn-update-intro">Update</button>
+				  {{/autoForm}}
+				</div>
 				<p>{{intro}}</p>
 			</section>
 			<hr>
@@ -55,11 +56,22 @@
 				<section class="col-md-10">
 					<!-- Pre-Requisites -->
 					<div class="tutorial-chapter">
-						<h3 id="prerequisites">Pre-requisites</h3>
+						<h3 id="prerequisites">Pre-requisites <i class="fa fa-pencil fa-pencil-prereq"></i></h3>
+
 						<div class="tutorial-contents">
+							<div class="editable-form prereq-autoform">
+								{{#autoForm collection="Apis" id="updateForm" type="update" doc=this setArrayItems=true scope="languages.2.prereq"}}
+								    <fieldset>
+								      {{> afQuickField name="languages.0.prereq"}}
+								    </fieldset>
+								    <button type="submit" class="btn btn-primary btn-update-prereq">Update</button>
+							  {{/autoForm}}
+							</div>
+
 							{{#each lang in languages}}
 								<div class="{{lang.nameOfLanguage}}">
 									<p>{{lang.prereq.overview}}</p>
+									
 									{{#let steps=lang.prereq.stepsOfPrereq}}
 									{{#each step in steps}}
 										<h4>Step {{step.num}}: {{step.title}}</h4>
@@ -72,6 +84,12 @@
 										{{#if step.code}}{{> CodeMirror id=step.num options=editorOptions code=step.code}}{{/if}}
 									{{/each}}
 									{{/let}}
+
+									<p><i class="fa fa-plus-square-o fa-plus-prereq-step" aria-hidden="true">Add steps</i> </p>
+									<div class="editable-form prereq-step-add-autoform">
+										{{> quickForm id="updatePushForm" type="update-pushArray" collection="Apis" doc=this scope="languages.0.prereq.stepsOfPrereq"}}
+										
+									</div>
 								</div>
 							{{/each}}
 						</div>	
@@ -81,8 +99,25 @@
 					{{#each lang in languages}}
 					<div class="{{lang.nameOfLanguage}}">
 						{{#each tut in lang.tutorials}}
+
+						
+
 						<div class="tutorial-subchapter">
-							<h3 id="{{tut.nameOfTutorial}}">{{tut.nameOfTutorial}}</h3>
+							<h3 id="{{tut.nameOfTutorial}}">{{tut.nameOfTutorial}} <i class="fa fa-pencil fa-pencil-tut"></i> <i class="fa fa-plus-square-o fa-plus-tut" aria-hidden="true"></i></h3>
+							
+							<div class="editable-form tut-add-autoform">
+								{{> quickForm id="updatePushForm" type="update-pushArray" collection="Apis" doc=this scope="languages.2.tutorials"}}
+							</div>
+
+							<div class="editable-form tut-autoform">
+									{{#autoForm collection="Apis" id="updateForm" type="update" doc=this setArrayItems=true}}
+										<fieldset>
+											{{> afQuickField name="languages.2.tutorials"}}
+										</fieldset>
+										<button type="submit" class="btn btn-primary btn-update-tut">Update</button>
+									{{/autoForm}}
+								</div>
+
 							<div class="tutorial-step">
 								{{#each step in tut.stepsOfTutorial}}
 								<div class="tutorial-contents">
@@ -94,8 +129,16 @@
 									{{#if step.video}}<iframe width="420" height="315" src="{{step.video}}" frameborder="0" allowfullscreen></iframe>{{/if}}
 									<!-- code -->
 									{{#if step.code}}{{> CodeMirror id=step.num options=editorOptions code=step.code}}{{/if}}
+
+									<p><i class="fa fa-plus-square-o fa-plus-tut-step" aria-hidden="true">Add steps</i> </p>
+									<div class="editable-form tut-step-add-autoform">
+										{{> quickForm id="updatePushForm" type="update-pushArray" collection="Apis" doc=this scope="languages.0.tutorials.stepsOfTutorial"}}
+
+									</div>
 								</div>
 								{{/each}}
+
+
 							</div>
 						</div>
 						{{/each}}
@@ -104,13 +147,34 @@
 					</div>
 					<!-- Sample Works -->
 					<div class="tutorial-chapter">
-						<h3 id="sample-works">Sample Works</h3>
+						<h3 id="sample-works">Sample Works <i class="fa fa-pencil fa-pencil-sample"></i> <i class="fa fa-plus-square-o fa-plus-sample" aria-hidden="true"></i></h3>
 						<div class="tutorial-contents">
-							<p>
-							{{#each sample in sampleworks}}
-							<a href="{{sample.linkOfSampleWork}}">{{sample.textOfSampleWork}}</a>
-							{{/each}}
-							</p>
+								<div class="editable-form sample-autoform">
+									{{#autoForm collection="Apis" id="updateForm" type="update" doc=this setArrayItems=true}}
+										<fieldset>
+											{{> afQuickField name="sampleworks.2.textOfSampleWork"}}
+											{{> afQuickField name='sampleworks.2.linkOfSampleWork'}}
+										</fieldset>
+										<button type="submit" class="btn btn-primary btn-update-sample">Update</button>
+									{{/autoForm}}
+								</div>
+
+								<div class="editable-form sample-add-autoform">
+									{{> quickForm id="updatePushForm" type="update-pushArray" collection="Apis" doc=this scope="sampleworks"}}
+<!-- 
+									{{#autoForm collection="Apis" id="updatePushForm" type="update-pushArray" doc=this cope="sampleworks"}}
+										<fieldset>
+											{{> afQuickField name="sampleworks.2.textOfSampleWork"}}
+											{{> afQuickField name='sampleworks.2.linkOfSampleWork'}}
+										</fieldset>
+										<button type="submit" class="btn btn-primary btn-add-sample">Add</button>
+									{{/autoForm}} -->
+								</div>
+								
+								{{#each sample in sampleworks}}
+									<p><a href="{{sample.linkOfSampleWork}}">{{sample.textOfSampleWork}}</a></p>
+								{{/each}}
+							
 						</div>
 					</div>
 					<!-- Comments -->
