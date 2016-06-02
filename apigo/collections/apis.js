@@ -173,7 +173,6 @@ Schema.ApisSchema = new SimpleSchema({
 		label: "Step",
 		optional: true,
 	},
-
 	'languages.$.tutorials.$': {
 		type: Object,
 		label: "Tutorials",

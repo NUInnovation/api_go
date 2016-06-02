@@ -18,7 +18,7 @@ Template.apiPage.helpers({
     };
   },
 
-  updateFormId: function(){
+  updatePushFormId: function(){
     return this._id;
   },
   exampleDoc: function () {
