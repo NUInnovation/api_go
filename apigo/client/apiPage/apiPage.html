@@ -87,7 +87,7 @@
 
 									<p><i class="fa fa-plus-square-o fa-plus-prereq-step" aria-hidden="true">Add steps</i> </p>
 									<div class="editable-form prereq-step-add-autoform">
-										{{> quickForm id="updatePushForm" type="update-pushArray" collection="Apis" doc=this scope="languages.0.prereq.stepsOfPrereq"}}
+										{{> quickForm id=updatePushFormId type="update-pushArray" collection="Apis" doc=this scope="languages.0.prereq.stepsOfPrereq"}}
 										
 									</div>
 								</div>
@@ -130,13 +130,15 @@
 									<!-- code -->
 									{{#if step.code}}{{> CodeMirror id=step.num options=editorOptions code=step.code}}{{/if}}
 
-									<p><i class="fa fa-plus-square-o fa-plus-tut-step" aria-hidden="true">Add steps</i> </p>
-									<div class="editable-form tut-step-add-autoform">
-										{{> quickForm id="updatePushForm" type="update-pushArray" collection="Apis" doc=this scope="languages.0.tutorials.stepsOfTutorial"}}
-
-									</div>
+									
 								</div>
 								{{/each}}
+
+								<p><i class="fa fa-plus-square-o fa-plus-tut-step" aria-hidden="true">Add steps</i> </p>
+								<div class="editable-form tut-step-add-autoform">
+									{{> quickForm id=updatePushFormId type="update-pushArray" collection="Apis" doc=this scope="languages.0.tutorials.0.stepsOfTutorial"}}
+
+								</div>
 
 
 							</div>
