@@ -41,17 +41,18 @@ ___5. Next steps:___
 ___1. Resource dependencies (databases, external services, APIs, etc.) & Code/library dependencies___
 
 The following are npm modules used in this app:
-iron:router - For routing
-jss:flat-ui - CSS
-less - CSS preprocesser
-richsilv:owl-carousel - JS Carousel library
-meteortoys:allthings - Database visualizer
-fortawesome:fontawesome - Fonts/UI
-aldeed:collection2 - Forms
-aldeed:autoform - Forms
-aldeed:simple-schema - Forms + MongoDB
-perak:codemirror - JS Code prettify
-underscore - JS utility library
+
+- iron:router - For routing
+- jss:flat-ui - CSS
+- less - CSS preprocesser
+- richsilv:owl-carousel - JS Carousel library
+- meteortoys:allthings - Database visualizer
+- fortawesome:fontawesome - Fonts/UI
+- aldeed:collection2 - Forms
+- aldeed:autoform - Forms
+- aldeed:simple-schema - Forms + MongoDB
+- perak:codemirror - JS Code prettify
+- underscore - JS utility library
 
 
 Meteor JS comes with MongoDB installed.
