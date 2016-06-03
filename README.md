@@ -26,13 +26,19 @@ ___3. How it works:___
 
 ___4. Key technologies:___
 
+ - Meteor JS
+ - Flat UI Bootstrap
+ - Heroku
+
 http://designmodo.github.io/Flat-UI/docs/components.html
 
 ___5. Next steps:___
 
+
+
 ####Project setup information
 
-___1. Resource dependencies (databases, external services, APIs, etc.)___
+___1. Resource dependencies (databases, external services, APIs, etc.) & Code/library dependencies___
 
 https://github.com/jackadams/meteor-editable-text-wysiwyg-bootstrap-3/
 
@@ -42,6 +48,13 @@ https://github.com/aldeed/meteor-simple-schema
 AutoForm
 https://github.com/aldeed/meteor-autoform
 
-___2. Code/library dependencies___
+Meteor JS comes with MongoDB installed.
 
-___3. How to setup and run the code___
+
+___2. How to setup and run the code___
+
+1. Install Meteor JS from https://www.meteor.com/install
+2. Clone this repository from GitHub
+3. In the `apigo` directory, run the command `meteor` to start the app
+4. Go to localhost:3000 in your web browser to see the website
+5. For Heroku, the app is hosted at nuapigo.herokuapp.com and to make updates to the app you need to follow the steps in this tutorial http://justmeteor.com/blog/deploy-to-production-on-heroku/
