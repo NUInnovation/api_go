@@ -40,13 +40,19 @@ ___5. Next steps:___
 
 ___1. Resource dependencies (databases, external services, APIs, etc.) & Code/library dependencies___
 
-https://github.com/jackadams/meteor-editable-text-wysiwyg-bootstrap-3/
+The following are npm modules used in this app:
+iron:router - For routing
+jss:flat-ui - CSS
+less - CSS preprocesser
+richsilv:owl-carousel - JS Carousel library
+meteortoys:allthings - Database visualizer
+fortawesome:fontawesome - Fonts/UI
+aldeed:collection2 - Forms
+aldeed:autoform - Forms
+aldeed:simple-schema - Forms + MongoDB
+perak:codemirror - JS Code prettify
+underscore - JS utility library
 
-SimpleSchema
-https://github.com/aldeed/meteor-simple-schema
-
-AutoForm
-https://github.com/aldeed/meteor-autoform
 
 Meteor JS comes with MongoDB installed.
 
