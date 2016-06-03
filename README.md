@@ -34,6 +34,10 @@ http://designmodo.github.io/Flat-UI/docs/components.html
 
 ___5. Next steps:___
 
+- Add a voting or rating system
+- Moderators, gamification to incentivize contributions
+- Multilingual API explorer 
+- Accomplish searching and categorization functions
 
 
 ####Project setup information
